@@ -1,5 +1,6 @@
 <?php
-    $paragraph = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae consequatur at harum facere deserunt voluptatum.';
+    $paragraph = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. A reprehenderit itaque assumenda, impedit aliquam, optio atque sint aspernatur nulla doloribus, deleniti non quam cupiditate. Fugit laborum quisquam itaque unde ducimus.';
+    $badword = $_GET["badword"];
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +13,14 @@
 </head>
 <body>
     
-    <p> P: <?php echo $paragraph; ?> </p>
-    <p> Numero di caratteri: <?php echo strlen($paragraph); ?> </p>
+    <p> <?php echo $paragraph; ?> </p>
+    <h4> Numero di caratteri: <?php echo strlen($paragraph); ?> </h4>
+    <h1> Parola vietata: <?php echo $badword; ?></h1>
+
+    <!-- Paragrafo Modificato -->
+    <p> <?php echo str_replace( $badword, '***', $paragraph);?> </p>
+    <h4> Numero di caratteri: <?php echo strlen(str_replace( $badword, '***', $paragraph)); ?> </h4>
+
 
 </body>
 </html>
